@@ -4,13 +4,9 @@ using UnityEngine;
 
 public class PlayerController_scr : MonoBehaviour
 {
-    InteractableObject_scr nearestInteractableObject;
-
     //local variables
     Rigidbody2D rb;
     Collider2D playerCollider;
-
-    [SerializeField] public bool isInteracting = false;
 
     [Header("Interact Parameters")]
     public float interactableDistance;
@@ -39,8 +35,7 @@ public class PlayerController_scr : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        Debug.Log(isInteracting);
+    { 
         //MOVEMENT RELATED
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatCanBeSteppedOn);
         //checking if grounded
@@ -50,16 +45,6 @@ public class PlayerController_scr : MonoBehaviour
         {
             Movement_Jump();
         }
-
-        //INTERACTION RELATED
-        Debug.Log(isInteracting + " isInteracting");
-
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-
-        }
-
-
 
     }
 
