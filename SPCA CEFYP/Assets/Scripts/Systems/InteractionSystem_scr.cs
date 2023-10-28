@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class InteractionSystem_scr : MonoBehaviour
@@ -23,10 +24,12 @@ public class InteractionSystem_scr : MonoBehaviour
             if (InteractInput())
             {
                 Debug.Log("Interact!");
+                onSubmitPressed();
             }
         }
     }
 
+    public event Action onSubmitPressed;
     bool InteractInput()
     {
         return Input.GetKeyDown(KeyCode.E);

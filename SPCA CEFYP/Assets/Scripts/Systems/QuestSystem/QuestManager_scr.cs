@@ -11,6 +11,44 @@ public class QuestManager : MonoBehaviour
         questMap = CreateQuestMap();
     }
 
+    void OnEnable()
+    {
+        GameEventsManager_scr.instance.questEvents.onStartQuest += StartQuest;
+        GameEventsManager_scr.instance.questEvents.onAdvanceQuest += AdvanceQuest;
+        GameEventsManager_scr.instance.questEvents.onFinishQuest += FinishQuest;
+    }
+
+    void OnDisable()
+    {
+        GameEventsManager_scr.instance.questEvents.onStartQuest -= StartQuest;
+        GameEventsManager_scr.instance.questEvents.onAdvanceQuest -= AdvanceQuest;
+        GameEventsManager_scr.instance.questEvents.onFinishQuest -= FinishQuest;
+    }
+
+    void Start()
+    {
+        foreach ( Quest_scr quest in questMap.Values)
+        {
+            GameEventsManager_scr.instance.questEvents.QuestStateChange(quest);
+        }
+    }
+
+    void StartQuest(string id)
+    {
+        Debug.Log("Start Quest:" + id);
+    }
+
+    void AdvanceQuest(string id)
+    {
+        Debug.Log("Advance Quest:" + id);
+    }
+
+    void FinishQuest(string id)
+    {
+        Debug.Log("Finish Quest:" + id);
+    }
+
+
     Dictionary<string, Quest_scr> CreateQuestMap()
     {
         

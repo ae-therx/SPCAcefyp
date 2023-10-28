@@ -8,19 +8,19 @@ public class Quest_scr
     public QuestInfo_so info;
 
     // state info
-    public QuestState state;
+    public QuestState_enum state;
     private int currentQuestStepIndex;
 
 
-    public Quest(QuestInfo_so questInfo)
+    /*public Quest(QuestInfo_so questInfo)
     {
         this.info = questInfo;
-        this.state = QuestState.REQUIREMENTS_NOT_MET;
+        this.state = QuestState_enum.REQUIREMENTS_NOT_MET;
         this.currentQuestStepIndex = 0;
 
     }
 
-    public Quest(QuestInfo_so questInfo, QuestState questState, int currentQuestStepIndex)
+    public Quest(QuestInfo_so questInfo, QuestState_enum questState, int currentQuestStepIndex)
     {
         this.info = questInfo;
         this.state = questState;
@@ -29,8 +29,8 @@ public class Quest_scr
 
         // if the quest step states and prefabs are different lengths,
         // something has changed during development and the saved data is out of sync.
-
-    }
+        
+    }*/
 
     public void MoveToNextStep()
     {
