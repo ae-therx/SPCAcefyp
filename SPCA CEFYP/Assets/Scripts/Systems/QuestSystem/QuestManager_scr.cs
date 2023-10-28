@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class QuestManager : MonoBehaviour
+public class QuestManager_scr : MonoBehaviour
 {
     Dictionary<string, Quest_scr> questMap;
 
@@ -62,7 +62,7 @@ public class QuestManager : MonoBehaviour
             {
                 Debug.LogWarning("Duplicate ID found when creating quest map: " + questInfo.id);
             }
-            idToQuestMap.Add(questInfo.id, new Quest_scr(questInfo));
+            idToQuestMap.Add(questInfo.id, new Quest_scr(questInfo)); 
         }
         return idToQuestMap;
     }

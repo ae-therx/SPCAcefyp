@@ -8,7 +8,9 @@ public class InteractionSystem_scr : MonoBehaviour
     [Header("Interaction Parameters")]
     public Transform interactDetectionPoint;
     public LayerMask whatIsInteractable;
-    const float interactDetectionRadius = 0.2f;
+    const float interactDetectionRadius = 0.4f;
+
+    [SerializeField] public bool hasInteracted;
 
     // Start is called before the first frame update
     void Start()
@@ -24,18 +26,24 @@ public class InteractionSystem_scr : MonoBehaviour
             if (InteractInput())
             {
                 Debug.Log("Interact!");
+                hasInteracted = true;
                 onSubmitPressed();
+            }
+            else
+            {
+                hasInteracted = false;
             }
         }
     }
 
     public event Action onSubmitPressed;
+
     bool InteractInput()
     {
         return Input.GetKeyDown(KeyCode.E);
     }
 
-    bool DetectInteractableObjects()
+    public bool DetectInteractableObjects()
     {
         return Physics2D.OverlapCircle(interactDetectionPoint.transform.position, interactDetectionRadius, whatIsInteractable);
     }

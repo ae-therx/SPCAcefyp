@@ -44,6 +44,9 @@ public class QuestPoint_scr : MonoBehaviour
         {
             return;
         }
+        GameEventsManager_scr.instance.questEvents.StartQuest(questId);
+        GameEventsManager_scr.instance.questEvents.AdvanceQuest(questId);
+        GameEventsManager_scr.instance.questEvents.FinishQuest(questId);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
