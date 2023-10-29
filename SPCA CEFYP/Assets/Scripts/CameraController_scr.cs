@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class CameraController_scr : MonoBehaviour
 {
+    
+
     [Header("Camera Settings")]
     public Transform target;
     public float camAheadOffset = 0f;
@@ -14,6 +17,7 @@ public class CameraController_scr : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         Vector3 targetPosition = new Vector3(target.position.x + camAheadOffset * Mathf.Sign(target.localScale.x), target.position.y + camUpOffset, transform.position.z);
 
 
