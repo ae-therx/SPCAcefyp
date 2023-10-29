@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c571cfa709b54ed41be5a4deb3e60fc8, type: 3}
   m_Name: TestQuest
   m_EditorClassIdentifier: 
-  <id>k__BackingField: 
-  displayName: 
-  questPrerequisites: []
-  questStepsPrefabs: []
+  <id>k__BackingField: TestQuest
+  displayName: Find a project you like
+  questPrerequisites:
+  - {fileID: 11400000}
+  questStepPrefabs:
+  - {fileID: 4245731805791596847, guid: 732a6a3afaef9f541bc12166dc44d37b, type: 3}
